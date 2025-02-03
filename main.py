@@ -18,9 +18,19 @@ print('startYear:\n',gfg_df['startYear'].unique(),'\n')
 print('runtimeMinutes:\n',gfg_df['runtimeMinutes'].unique(),'\n')
 print('genres:\n',gfg_df['genres'].unique(),'\n')
 
-#gfg_df['isAdult'] = gfg_df['isAdult'].astype(str)
-gfg_df['isAdult'] = gfg_df['isAdult'].replace("\\N",'No')
-#gfg_df['isAdult'] = gfg_df['isAdult'].replace("0",'No')
+gfg_df['isAdult'] = gfg_df['isAdult'].replace("\\N",0)
+gfg_df['isAdult'] = gfg_df['isAdult'].astype(int)
+
+def isAdult(x):
+    try:
+        if x == 0:
+            return 'No'
+        else:
+            return 'Yes'
+    except Exception as e:
+        return f'cannot update values: {type(e)}'
+
+gfg_df['isAdult'] = gfg_df.apply(lambda x: isAdult(x.iloc[4]), axis='columns')
 
 gfg_df['startYear'] = gfg_df['startYear'].replace("\\N",0000).astype(int)
 
