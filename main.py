@@ -9,7 +9,7 @@ for col_name in my_list:
     print(index, col_name)
     index +=1
 
-print('tconst:\n',gfg_df['tconst'].unique(),'\n')
+print('\ntconst:\n',gfg_df['tconst'].unique(),'\n')
 print('titleType:\n',gfg_df['titleType'].unique(),'\n')
 print('primaryTitle:\n',gfg_df['primaryTitle'].unique(),'\n')
 print('originalTitle:\n',gfg_df['originalTitle'].unique(),'\n')
@@ -18,10 +18,14 @@ print('startYear:\n',gfg_df['startYear'].unique(),'\n')
 print('runtimeMinutes:\n',gfg_df['runtimeMinutes'].unique(),'\n')
 print('genres:\n',gfg_df['genres'].unique(),'\n')
 
-gfg_df['startYear'] = gfg_df['startYear'].replace("\\N",0000)
-gfg_df['startYear'] = gfg_df['startYear'].astype(int)
+#gfg_df['isAdult'] = gfg_df['isAdult'].astype(str)
+gfg_df['isAdult'] = gfg_df['isAdult'].replace("\\N",'No')
+#gfg_df['isAdult'] = gfg_df['isAdult'].replace("0",'No')
 
-print('\n',gfg_df['startYear'].unique(),'\n')
+gfg_df['startYear'] = gfg_df['startYear'].replace("\\N",0000).astype(int)
+
+print('\nisAdult:',gfg_df['isAdult'].unique(),'\n')
+print('\nstartYear:',gfg_df['startYear'].unique(),'\n')
 
 def movie_1980s(df):
     try:
