@@ -15,6 +15,7 @@ print('primaryTitle:\n',gfg_df['primaryTitle'].unique(),'\n')
 print('originalTitle:\n',gfg_df['originalTitle'].unique(),'\n')
 print('isAdult:\n',gfg_df['isAdult'].unique(),'\n')
 print('startYear:\n',gfg_df['startYear'].unique(),'\n')
+print('endYear:\n',gfg_df['endYear'].unique(),'\n')
 print('runtimeMinutes:\n',gfg_df['runtimeMinutes'].unique(),'\n')
 print('genres:\n',gfg_df['genres'].unique(),'\n')
 
@@ -33,9 +34,11 @@ def isAdult(x):
 gfg_df['isAdult'] = gfg_df.apply(lambda x: isAdult(x.iloc[4]), axis='columns')
 
 gfg_df['startYear'] = gfg_df['startYear'].replace("\\N",0000).astype(int)
+gfg_df['endYear'] = gfg_df['endYear'].replace("\\N",0000).astype(int)
 
 print('\nisAdult:',gfg_df['isAdult'].unique(),'\n')
 print('\nstartYear:',gfg_df['startYear'].unique(),'\n')
+print('\nendYear:',gfg_df['endYear'].unique(),'\n')
 
 def movie_1980s(df):
     try:
