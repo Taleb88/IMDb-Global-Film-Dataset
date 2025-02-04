@@ -31,12 +31,10 @@ def isAdult(x):
         return f'cannot update values: {type(e)}'
 
 gfg_df['isAdult'] = gfg_df.apply(lambda x: isAdult(x.iloc[4]), axis='columns')
-
 print('\nisAdult:',gfg_df['isAdult'].unique(),'\n')
 
 gfg_df['startYear'] = gfg_df['startYear'].replace("\\N",0000).astype(int)
 gfg_df['endYear'] = gfg_df['endYear'].replace("\\N",0000).astype(int)
-
 print('\nstartYear:',gfg_df['startYear'].unique(),'\n')
 print('\nendYear:',gfg_df['endYear'].unique(),'\n')
 
@@ -55,8 +53,8 @@ def runtimeMinutes(x):
         return f'error - cannot make proposed changes {type(e)}'
     
 gfg_df['runtimeMinutes'] = gfg_df.apply(lambda x: runtimeMinutes(x.iloc[7]), axis='columns')
-
 gfg_df['runtimeMinutes'] = gfg_df['runtimeMinutes'].replace("\\N",'0').astype(str)
+gfg_df['runtimeMinutes'] = gfg_df['runtimeMinutes'].astype(str)
 
 print('runTimeMinutes updated accordingly:\n',gfg_df)
 
