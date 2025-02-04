@@ -1,6 +1,6 @@
 import pandas as pd
 
-gfg_df = pd.read_csv('GfG.csv', low_memory=False)
+gfg_df = pd.read_csv('csv/GfG.csv', low_memory=False)
 
 my_list = list(gfg_df.columns)
 index = 0
@@ -21,6 +21,8 @@ print('genres:\n',gfg_df['genres'].unique(),'\n')
 
 gfg_df['isAdult'] = gfg_df['isAdult'].replace("\\N",0).astype(int)
 
+gfg_df.to_csv('GfG.csv', index=False)
+
 def isAdult(x):
     try:
         if x == 0:
@@ -31,10 +33,14 @@ def isAdult(x):
         return f'cannot update values: {type(e)}'
 
 gfg_df['isAdult'] = gfg_df.apply(lambda x: isAdult(x.iloc[4]), axis='columns')
+gfg_df.to_csv('GfG.csv', index=False)
 print('\nisAdult:',gfg_df['isAdult'].unique(),'\n')
 
 gfg_df['startYear'] = gfg_df['startYear'].replace("\\N",0000).astype(int)
+gfg_df.to_csv('GfG.csv', index=False)
 gfg_df['endYear'] = gfg_df['endYear'].replace("\\N",0000).astype(int)
+gfg_df.to_csv('GfG.csv', index=False)
+
 print('\nstartYear:',gfg_df['startYear'].unique(),'\n')
 print('\nendYear:',gfg_df['endYear'].unique(),'\n')
 
@@ -53,17 +59,20 @@ def runtimeMinutes(x):
         return f'error - cannot make proposed changes {type(e)}'
     
 gfg_df['runtimeMinutes'] = gfg_df.apply(lambda x: runtimeMinutes(x.iloc[7]), axis='columns')
+gfg_df.to_csv('GfG.csv', index=False)
 gfg_df['runtimeMinutes'] = gfg_df['runtimeMinutes'].astype(int)
+gfg_df.to_csv('GfG.csv', index=False)
 print('runtimeMinutes updated:\n',gfg_df['runtimeMinutes'].unique(),'\n')
 print('runTimeMinutes updated accordingly:\n',gfg_df)
 
 gfg_df['genres'] = gfg_df['genres'].replace("\\N","TBD")
+gfg_df.to_csv('GfG.csv', index=False)
 print('genres updated:\n',gfg_df['genres'].unique(),'\n')
 
 start_year_value_zero = gfg_df.loc[gfg_df['startYear'] == 0]
 print(start_year_value_zero)
 
-#additional cleanup - filter all movies/tv shows with startYear = 0 and make corrections per title
+#additional cleanup conducted - filter all movies/tv shows with startYear = 0 and make corrections per title
 
 '''def movie_1980s(df):
     try:
