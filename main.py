@@ -38,14 +38,14 @@ gfg_df['endYear'] = gfg_df['endYear'].replace("\\N",0000).astype(int)
 print('\nstartYear:',gfg_df['startYear'].unique(),'\n')
 print('\nendYear:',gfg_df['endYear'].unique(),'\n')
 
-runtime_minutes_errors = ['Reality-TV','Talk-Show','Documentary','Family,Game-Show','Animation,Comedy,Family',
-         'News,Talk-Show','Comedy,News,Talk-Show','Documentary,Reality-TV','Comedy,Drama,Fantasy',
+runtime_minutes_errors = ['\\N','Reality-TV','Talk-Show','Documentary','Family,Game-Show','Animation,Comedy,Family',
+         'News,Talk-Show','Comedy,News,Talk-Show','Documentary,Reality-TV','Adult','Comedy,Drama,Fantasy',
          'Fantasy,Horror,Mystery','Action,Fantasy,Horror','Action,Horror,Mystery','Comedy,Drama,Horror',
-         'Action,Adventure,Drama','Drama,Fantasy,Horror','Game-Show,Reality-TV']
+         'Action,Adventure,Drama','Music','Drama,Fantasy,Horror','Game-Show,Reality-TV']
 
 def runtimeMinutes(x):
     try:
-        if x == runtime_minutes_errors:
+        if x in runtime_minutes_errors:
             return '0'
         else:
             return f'{x}'
@@ -53,9 +53,8 @@ def runtimeMinutes(x):
         return f'error - cannot make proposed changes {type(e)}'
     
 gfg_df['runtimeMinutes'] = gfg_df.apply(lambda x: runtimeMinutes(x.iloc[7]), axis='columns')
-gfg_df['runtimeMinutes'] = gfg_df['runtimeMinutes'].replace("\\N",'0').astype(str)
-gfg_df['runtimeMinutes'] = gfg_df['runtimeMinutes'].astype(str)
-
+gfg_df['runtimeMinutes'] = gfg_df['runtimeMinutes'].astype(int)
+print('runtimeMinutes updated:\n',gfg_df['runtimeMinutes'].unique(),'\n')
 print('runTimeMinutes updated accordingly:\n',gfg_df)
 
 def movie_1980s(df):
