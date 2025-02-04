@@ -60,7 +60,12 @@ print('runTimeMinutes updated accordingly:\n',gfg_df)
 gfg_df['genres'] = gfg_df['genres'].replace("\\N","TBD")
 print('genres updated:\n',gfg_df['genres'].unique(),'\n')
 
-def movie_1980s(df):
+start_year_value_zero = gfg_df.loc[gfg_df['startYear'] == 0]
+print(start_year_value_zero)
+
+#additional cleanup - filter all movies/tv shows with startYear = 0 and make corrections per title
+
+'''def movie_1980s(df):
     try:
         return df[(df['titleType'] == 'movie') &\
                   (df['startYear'] >= 1980) &\
@@ -68,4 +73,6 @@ def movie_1980s(df):
     except Exception as e:
         return(f'cannot filter out rows not meeting criteria {type(e)}')
 
-print('movies from the 1980s:\n',movie_1980s(gfg_df),'\n')
+print('movies from the 1980s:\n',movie_1980s(gfg_df),'\n')'''
+
+#===============================================================================================#
