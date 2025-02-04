@@ -57,6 +57,9 @@ gfg_df['runtimeMinutes'] = gfg_df['runtimeMinutes'].astype(int)
 print('runtimeMinutes updated:\n',gfg_df['runtimeMinutes'].unique(),'\n')
 print('runTimeMinutes updated accordingly:\n',gfg_df)
 
+gfg_df['genres'] = gfg_df['genres'].replace("\\N","TBD")
+print('genres updated:\n',gfg_df['genres'].unique(),'\n')
+
 def movie_1980s(df):
     try:
         return df[(df['titleType'] == 'movie') &\
