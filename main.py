@@ -69,10 +69,12 @@ gfg_df['genres'] = gfg_df['genres'].replace("\\N","TBD")
 gfg_df.to_csv('GfG.csv', index=False)
 print('genres updated:\n',gfg_df['genres'].unique(),'\n')
 
-start_year_value_zero = gfg_df.loc[gfg_df['startYear'] == 0]
-print(start_year_value_zero)
-
 #additional cleanup conducted - filter all movies/tv shows with startYear = 0 and make corrections per title
+start_year_value_zero_title_type_short_df = gfg_df.loc[(gfg_df['startYear'] == 0) & (gfg_df['titleType'] == 'short')]
+print('\n',start_year_value_zero_title_type_short_df.sort_values(by=['primaryTitle'], ascending=True),'\n')
+
+
+
 
 '''def movie_1980s(df):
     try:
