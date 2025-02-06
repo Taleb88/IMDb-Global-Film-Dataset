@@ -69,12 +69,49 @@ gfg_df['genres'] = gfg_df['genres'].replace("\\N","TBD")
 gfg_df.to_csv('GfG.csv', index=False)
 print('genres updated:\n',gfg_df['genres'].unique(),'\n')
 
-#additional cleanup conducted - filter all movies/tv shows with startYear = 0 and make corrections per title
-start_year_value_zero_title_type_short_df = gfg_df.loc[(gfg_df['startYear'] == 0) & (gfg_df['titleType'] == 'short')]
-print('\n',start_year_value_zero_title_type_short_df.sort_values(by=['primaryTitle'], ascending=True),'\n')
+gfg_short_df = gfg_df.loc[gfg_df['titleType'] == 'short']
+gfg_short_df.to_csv('gfg_short.csv', index=False)
+print('short:\n',gfg_short_df,'\n')
 
+gfg_movie_df = gfg_df.loc[gfg_df['titleType'] == 'movie']
+gfg_movie_df.to_csv('gfg_movie.csv', index=False)
+print('movie:\n',gfg_movie_df,'\n')
 
+gfg_tv_short_df = gfg_df.loc[gfg_df['titleType'] == 'tvShort']
+gfg_tv_short_df.to_csv('gfg_tv_short.csv', index=False)
+print('tv_short:\n',gfg_tv_short_df,'\n')
 
+gfg_tv_movie_df = gfg_df.loc[gfg_df['titleType'] == 'tvMovie']
+gfg_tv_movie_df.to_csv('gfg_tv_movie.csv', index=False)
+print('tv_movie\n',gfg_tv_movie_df,'\n')
+
+gfg_tv_episode_df = gfg_df.loc[gfg_df['titleType'] == 'tvEpisode']
+gfg_tv_episode_df.to_csv('gfg_tv_episode.csv', index=False)
+print('tv_episode:\n',gfg_tv_episode_df,'\n')
+
+gfg_tv_series_df = gfg_df.loc[gfg_df['titleType'] == 'tvSeries']
+gfg_tv_series_df.to_csv('gfg_tv_series.csv', index=False)
+print('tv_series:\n',gfg_tv_series_df,'\n')
+
+gfg_tv_miniseries_df = gfg_df.loc[gfg_df['titleType'] == 'tvMiniSeries']
+gfg_tv_miniseries_df.to_csv('gfg_tv_miniseries.csv', index=False)
+print('tv_miniseries:\n',gfg_tv_miniseries_df,'\n')
+
+gfg_tv_special_df = gfg_df.loc[gfg_df['titleType'] == 'tvSpecial']
+gfg_tv_special_df.to_csv('gfg_tv_special.csv', index=False)
+print('tv_special:\n',gfg_tv_special_df,'\n')
+
+gfg_video_df = gfg_df.loc[gfg_df['titleType'] == 'video']
+gfg_video_df.to_csv('gfg_video.csv', index=False)
+print('video:\n',gfg_video_df,'\n')
+
+gfg_videogame_df = gfg_df.loc[gfg_df['titleType'] == 'videoGame']
+gfg_videogame_df.to_csv('gfg_videogame.csv', index=False)
+print('videogame:\n',gfg_videogame_df,'\n')
+
+gfg_tv_pilot_df = gfg_df.loc[gfg_df['titleType'] == 'tvPilot']
+gfg_tv_pilot_df.to_csv('gfg_tv_pilot.csv', index=False)
+print('tv_pilot:\n',gfg_tv_pilot_df,'\n')
 
 '''def movie_1980s(df):
     try:
