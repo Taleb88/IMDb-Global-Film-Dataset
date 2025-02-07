@@ -115,12 +115,18 @@ print('tv_pilot:\n',gfg_tv_pilot_df,'\n')
 #converted ratings_df into csv
 ratings_df = pd.read_table('title.ratings.tsv', sep='\t', low_memory=False)
 ratings_df.to_csv('ratings.csv', index=False)
-print('ratings_df:',ratings_df,'\n')
+print('ratings_df:\n',ratings_df,'\n')
 # merging gfg_df and ratings_df into one df
 gfg_ratings_merged_df = pd.merge(gfg_df, ratings_df, on='tconst')
+gfg_ratings_merged_df = gfg_ratings_merged_df.sort_values(by='averageRating', ascending=False)
 gfg_ratings_merged_df.to_csv('gfg_ratings_merged.csv', index=False)
-print('gfg_ratings_merged_df:',gfg_ratings_merged_df,'\n')
-
+print('gfg_ratings_merged_df:\n',gfg_ratings_merged_df.head(50),'\n')
+# top 50 tv series; min of 50,000 votes
+top_50_tv_series_df = \
+    gfg_ratings_merged_df.loc[(gfg_ratings_merged_df['titleType'] == 'tvSeries') & (gfg_ratings_merged_df['numVotes'].astype(int) >= 100000)]
+top_50_tv_series_df = top_50_tv_series_df.head(50)
+top_50_tv_series_df.to_csv('top_50_tv_series.csv', index=False)
+print('top_50_tv_series:\n',top_50_tv_series_df,'\n')
 
 
 '''def movie_1980s(df):
