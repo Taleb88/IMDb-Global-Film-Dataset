@@ -112,6 +112,16 @@ print('videogame:\n',gfg_videogame_df,'\n')
 gfg_tv_pilot_df = gfg_df.loc[gfg_df['titleType'] == 'tvPilot']
 gfg_tv_pilot_df.to_csv('gfg_tv_pilot.csv', index=False)
 print('tv_pilot:\n',gfg_tv_pilot_df,'\n')
+#converted ratings_df into csv
+ratings_df = pd.read_table('title.ratings.tsv', sep='\t', low_memory=False)
+ratings_df.to_csv('ratings.csv', index=False)
+print('ratings_df:',ratings_df,'\n')
+# merging gfg_df and ratings_df into one df
+gfg_ratings_merged_df = pd.merge(gfg_df, ratings_df, on='tconst')
+gfg_ratings_merged_df.to_csv('gfg_ratings_merged.csv', index=False)
+print('gfg_ratings_merged_df:',gfg_ratings_merged_df,'\n')
+
+
 
 '''def movie_1980s(df):
     try:
