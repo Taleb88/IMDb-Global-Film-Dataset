@@ -123,11 +123,23 @@ gfg_ratings_merged_df.to_csv('gfg_ratings_merged.csv', index=False)
 print('gfg_ratings_merged_df:\n',gfg_ratings_merged_df.head(50),'\n')
 # top 50 tv series; min of 50,000 votes
 top_50_tv_series_df = \
-    gfg_ratings_merged_df.loc[(gfg_ratings_merged_df['titleType'] == 'tvSeries') & (gfg_ratings_merged_df['numVotes'].astype(int) >= 100000)]
+    gfg_ratings_merged_df.loc[(gfg_ratings_merged_df['titleType'] == 'tvSeries') 
+                              & (gfg_ratings_merged_df['numVotes'].astype(int) >= 100000)]
 top_50_tv_series_df = top_50_tv_series_df.head(50)
 top_50_tv_series_df.to_csv('top_50_tv_series.csv', index=False)
 print('top_50_tv_series:\n',top_50_tv_series_df,'\n')
 
+# creating charts via matplotlib
+import matplotlib.pyplot as plt
+
+color = 'blue'
+x = top_50_tv_series_df['primaryTitle'].astype(str)
+y = top_50_tv_series_df['averageRating']
+plt.barh(x, y, color=color)
+plt.title('Top 50 TV Series')
+plt.yticks(fontsize=8)
+plt.xlabel('Rating')
+plt.show()
 
 '''def movie_1980s(df):
     try:
