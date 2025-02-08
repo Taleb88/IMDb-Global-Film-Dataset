@@ -8,7 +8,7 @@ index = 0
 for col_name in my_list:
     print(index, col_name)
     index +=1
-
+# displaying unique values per column
 print('\ntconst:\n',gfg_df['tconst'].unique(),'\n')
 print('titleType:\n',gfg_df['titleType'].unique(),'\n')
 print('primaryTitle:\n',gfg_df['primaryTitle'].unique(),'\n')
