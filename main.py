@@ -1,4 +1,5 @@
 import pandas as pd
+import re
 
 gfg_df = pd.read_csv('csv/GfG.csv', low_memory=False)
 
@@ -128,6 +129,13 @@ top_50_tv_series_df = \
 top_50_tv_series_df = top_50_tv_series_df.head(50)
 top_50_tv_series_df.to_csv('top_50_tv_series.csv', index=False)
 print('top_50_tv_series:\n',top_50_tv_series_df,'\n')
+
+# new york undercover
+new_york_undercover = gfg_ratings_merged_df.loc[gfg_ratings_merged_df['primaryTitle'] == 'New York Undercover']
+print('New York Undercover:\n',new_york_undercover,'\n')
+# living single
+#living_single = gfg_df.str.findall('single', flags=re.IGNORECASE)
+#print(living_single)
 
 # creating charts via matplotlib
 import matplotlib.pyplot as plt
