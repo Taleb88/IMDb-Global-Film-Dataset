@@ -149,9 +149,9 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == 'Boy Meets World') | 
             (df['primaryTitle'] == 'Charmed') | 
             (df['primaryTitle'] == 'My Wife and Kids') | 
-            (df['primaryTitle'] == 'In Living Color') | 
-            (df['primaryTitle'] == 'Saved by the Bell') | 
-            (df['primaryTitle'] == 'Law & Order'))]
+            (df['primaryTitle'] == 'In Living Color') |  
+            (df['primaryTitle'] == 'Law & Order') |
+            ((df['primaryTitle'] == 'Saved by the Bell') & (df['startYear'] == 1989)))]
     except Exception as e:
         return print(f'cannot filter accordingly - {type(e)}')
 
