@@ -137,20 +137,20 @@ print('top_50_tv_series:\n',top_50_tv_series_df,'\n')
 # my favorite tv shows
 def fav_tv_shows(df):
     try:
-        return df[(df['titleType'] == 'tvSeries') &\
+        return df[(df['titleType'] == 'tvSeries') &
             ((df['primaryTitle'] == 'New York Undercover') | 
             (df['primaryTitle'] == 'Martin') | 
             (df['primaryTitle'] == 'Living Single') | 
             (df['primaryTitle'] == "Hangin' with Mr. Cooper") | 
             (df['primaryTitle'] == 'Matlock') | 
             (df['primaryTitle'] == 'In the Heat of the Night') | 
-            (df['primaryTitle'] == 'The Simpsons')
-            (df['primaryTitle'] == 'Roc')
-            (df['primaryTitle'] == 'Boy Meets World')
-            (df['primaryTitle'] == 'Charmed')
-            (df['primaryTitle'] == 'My Wife and Kids')
-            (df['primaryTitle'] == 'In Living Color')
-            (df['primaryTitle'] == 'Saved by the Bell')
+            (df['primaryTitle'] == 'The Simpsons') | 
+            (df['primaryTitle'] == 'Roc') | 
+            (df['primaryTitle'] == 'Boy Meets World') | 
+            (df['primaryTitle'] == 'Charmed') | 
+            (df['primaryTitle'] == 'My Wife and Kids') | 
+            (df['primaryTitle'] == 'In Living Color') | 
+            (df['primaryTitle'] == 'Saved by the Bell') | 
             (df['primaryTitle'] == 'Law & Order'))]
     except Exception as e:
         return print(f'cannot filter accordingly - {type(e)}')
