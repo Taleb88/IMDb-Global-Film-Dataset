@@ -63,6 +63,7 @@ gfg_df['runtimeMinutes'] = gfg_df.apply(lambda x: runtimeMinutes(x.iloc[7]), axi
 gfg_df.to_csv('GfG.csv', index=False)
 gfg_df['runtimeMinutes'] = gfg_df['runtimeMinutes'].astype(int)
 gfg_df.to_csv('GfG.csv', index=False)
+
 print('runtimeMinutes updated:\n',gfg_df['runtimeMinutes'].unique(),'\n')
 print('runTimeMinutes updated accordingly:\n',gfg_df)
 
@@ -113,15 +114,18 @@ print('videogame:\n',gfg_videogame_df,'\n')
 gfg_tv_pilot_df = gfg_df.loc[gfg_df['titleType'] == 'tvPilot']
 gfg_tv_pilot_df.to_csv('gfg_tv_pilot.csv', index=False)
 print('tv_pilot:\n',gfg_tv_pilot_df,'\n')
+
 #converted ratings_df into csv
 ratings_df = pd.read_table('title.ratings.tsv', sep='\t', low_memory=False)
 ratings_df.to_csv('ratings.csv', index=False)
 print('ratings_df:\n',ratings_df,'\n')
+
 # merging gfg_df and ratings_df into one df
 gfg_ratings_merged_df = pd.merge(gfg_df, ratings_df, on='tconst')
 gfg_ratings_merged_df = gfg_ratings_merged_df.sort_values(by='averageRating', ascending=False)
 gfg_ratings_merged_df.to_csv('gfg_ratings_merged.csv', index=False)
 print('gfg_ratings_merged_df:\n',gfg_ratings_merged_df.head(50),'\n')
+
 # top 50 tv series; min of 50,000 votes
 top_50_tv_series_df = \
     gfg_ratings_merged_df.loc[(gfg_ratings_merged_df['titleType'] == 'tvSeries') 
@@ -129,6 +133,7 @@ top_50_tv_series_df = \
 top_50_tv_series_df = top_50_tv_series_df.head(50)
 top_50_tv_series_df.to_csv('top_50_tv_series.csv', index=False)
 print('top_50_tv_series:\n',top_50_tv_series_df,'\n')
+
 # my favorite tv shows
 def fav_tv_shows(df):
     try:
@@ -136,7 +141,17 @@ def fav_tv_shows(df):
             ((df['primaryTitle'] == 'New York Undercover') | 
             (df['primaryTitle'] == 'Martin') | 
             (df['primaryTitle'] == 'Living Single') | 
-            (df['primaryTitle'] == "Hangin' with Mr. Cooper"))]
+            (df['primaryTitle'] == "Hangin' with Mr. Cooper") | 
+            (df['primaryTitle'] == 'Matlock') | 
+            (df['primaryTitle'] == 'In the Heat of the Night') | 
+            (df['primaryTitle'] == 'The Simpsons')
+            (df['primaryTitle'] == 'Roc')
+            (df['primaryTitle'] == 'Boy Meets World')
+            (df['primaryTitle'] == 'Charmed')
+            (df['primaryTitle'] == 'My Wife and Kids')
+            (df['primaryTitle'] == 'In Living Color')
+            (df['primaryTitle'] == 'Saved by the Bell')
+            (df['primaryTitle'] == 'Law & Order'))]
     except Exception as e:
         return print(f'cannot filter accordingly - {type(e)}')
 
