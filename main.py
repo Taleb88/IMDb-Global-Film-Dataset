@@ -133,9 +133,21 @@ print('top_50_tv_series:\n',top_50_tv_series_df,'\n')
 # new york undercover
 new_york_undercover = gfg_ratings_merged_df.loc[gfg_ratings_merged_df['primaryTitle'] == 'New York Undercover']
 print('New York Undercover:\n',new_york_undercover,'\n')
+# martin
+martin = gfg_ratings_merged_df.loc[gfg_ratings_merged_df['primaryTitle'] == 'Martin']
+print('Martin:\n',martin,'\n')
 # living single
-#living_single = gfg_df.str.findall('single', flags=re.IGNORECASE)
-#print(living_single)
+living_single = gfg_ratings_merged_df.loc[gfg_ratings_merged_df['primaryTitle'] == 'Living Single']
+print('Living Single:\n',living_single,'\n')
+# hangin with mr. cooper
+hangin_with_mr_cooper = gfg_ratings_merged_df.loc[gfg_ratings_merged_df['primaryTitle'] == "Hangin' with Mr. Cooper"]
+print("Hangin' with Mr. Cooper:\n",hangin_with_mr_cooper,'\n')
+
+fav_tv_shows_data = ['New York Undercover','Martin','Living Single','Hangin with Mr. Cooper']
+
+for title in gfg_df['primaryTitle'].values:
+    if title in fav_tv_shows_data:
+        print('my fav title shows:\n',title,'\n')
 
 # creating charts via matplotlib
 import matplotlib.pyplot as plt
