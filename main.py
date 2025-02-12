@@ -143,11 +143,15 @@ print('Living Single:\n',living_single,'\n')
 hangin_with_mr_cooper = gfg_ratings_merged_df.loc[gfg_ratings_merged_df['primaryTitle'] == "Hangin' with Mr. Cooper"]
 print("Hangin' with Mr. Cooper:\n",hangin_with_mr_cooper,'\n')
 
-fav_tv_shows_data = ['New York Undercover','Martin','Living Single','Hangin with Mr. Cooper']
+'''def movie_1980s(df):
+    try:
+        return df[(df['titleType'] == 'movie') &\
+                  (df['startYear'] >= 1980) &\
+                  (df['startYear'] <= 1989)]
+    except Exception as e:
+        return(f'cannot filter out rows not meeting criteria {type(e)}')
 
-for title in gfg_df['primaryTitle'].values:
-    if title in fav_tv_shows_data:
-        print('my fav title shows:\n',title,'\n')
+print('movies from the 1980s:\n',movie_1980s(gfg_df),'\n')'''
 
 # creating charts via matplotlib
 import matplotlib.pyplot as plt
@@ -161,14 +165,10 @@ plt.yticks(fontsize=8)
 plt.xlabel('Rating')
 plt.show()
 
-'''def movie_1980s(df):
-    try:
-        return df[(df['titleType'] == 'movie') &\
-                  (df['startYear'] >= 1980) &\
-                  (df['startYear'] <= 1989)]
-    except Exception as e:
-        return(f'cannot filter out rows not meeting criteria {type(e)}')
+import time
 
-print('movies from the 1980s:\n',movie_1980s(gfg_df),'\n')'''
+start_time = time.time()
+print('\ntime of program execution -',(time.time() - start_time))
+
 
 #===============================================================================================#
