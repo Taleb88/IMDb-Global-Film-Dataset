@@ -129,29 +129,18 @@ top_50_tv_series_df = \
 top_50_tv_series_df = top_50_tv_series_df.head(50)
 top_50_tv_series_df.to_csv('top_50_tv_series.csv', index=False)
 print('top_50_tv_series:\n',top_50_tv_series_df,'\n')
-
-# new york undercover
-new_york_undercover = gfg_ratings_merged_df.loc[gfg_ratings_merged_df['primaryTitle'] == 'New York Undercover']
-print('New York Undercover:\n',new_york_undercover,'\n')
-# martin
-martin = gfg_ratings_merged_df.loc[gfg_ratings_merged_df['primaryTitle'] == 'Martin']
-print('Martin:\n',martin,'\n')
-# living single
-living_single = gfg_ratings_merged_df.loc[gfg_ratings_merged_df['primaryTitle'] == 'Living Single']
-print('Living Single:\n',living_single,'\n')
-# hangin with mr. cooper
-hangin_with_mr_cooper = gfg_ratings_merged_df.loc[gfg_ratings_merged_df['primaryTitle'] == "Hangin' with Mr. Cooper"]
-print("Hangin' with Mr. Cooper:\n",hangin_with_mr_cooper,'\n')
-
-'''def movie_1980s(df):
+# my favorite tv shows
+def fav_tv_shows(df):
     try:
-        return df[(df['titleType'] == 'movie') &\
-                  (df['startYear'] >= 1980) &\
-                  (df['startYear'] <= 1989)]
+        return df[(df['titleType'] == 'tvSeries') &\
+            ((df['primaryTitle'] == 'New York Undercover') | 
+            (df['primaryTitle'] == 'Martin') | 
+            (df['primaryTitle'] == 'Living Single') | 
+            (df['primaryTitle'] == "Hangin' with Mr. Cooper"))]
     except Exception as e:
-        return(f'cannot filter out rows not meeting criteria {type(e)}')
+        return print(f'cannot filter accordingly - {type(e)}')
 
-print('movies from the 1980s:\n',movie_1980s(gfg_df),'\n')'''
+print(fav_tv_shows(gfg_ratings_merged_df))
 
 # creating charts via matplotlib
 import matplotlib.pyplot as plt
