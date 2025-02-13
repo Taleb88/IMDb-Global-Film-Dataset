@@ -126,6 +126,9 @@ gfg_ratings_merged_df = gfg_ratings_merged_df.sort_values(by='averageRating', as
 gfg_ratings_merged_df.to_csv('gfg_ratings_merged.csv', index=False)
 print('gfg_ratings_merged_df:\n',gfg_ratings_merged_df.head(50),'\n')
 
+# value corrections - miscelleaneous
+
+
 # top 50 tv series; min of 50,000 votes
 top_50_tv_series_df = \
     gfg_ratings_merged_df.loc[(gfg_ratings_merged_df['titleType'] == 'tvSeries') 
@@ -148,6 +151,19 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == 'Boy Meets World') | 
             (df['primaryTitle'] == 'My Wife and Kids') | 
             (df['primaryTitle'] == 'Law & Order') |
+            (df['primaryTitle'] == 'The Fresh Prince of Bel Air') |
+            (df['primaryTitle'] == 'The Wire') |
+            (df['primaryTitle'] == 'Beverly Hills, 90210') |
+            (df['primaryTitle'] == 'Married... with Children') |
+            (df['primaryTitle'] == 'Malcolm & Eddie') |
+            (df['primaryTitle'] == 'The Steve Harvey Show') |
+            (df['primaryTitle'] == 'The Cosby Show') |
+            (df['primaryTitle'] == 'Rugrats') |
+            (df['primaryTitle'] == 'The Ren & Stimpy Show') |
+            (df['primaryTitle'] == 'Doug') |
+            (df['primaryTitle'] == 'Beavis and Butt-Head') |
+            (df['primaryTitle'] == '2 Stupid Dogs') |
+            (df['primaryTitle'] == 'Eek! The Cat') |
             ((df['primaryTitle'] == 'Charmed') & (df['startYear'] == 1998)) | 
             ((df['primaryTitle'] == 'Matlock') & (df['startYear'] == 1986)) | 
             ((df['primaryTitle'] == 'In Living Color') & (df['startYear'] == 1990)) | 
