@@ -173,7 +173,7 @@ def fav_tv_shows(df):
 
 fav_tv_shows_df = fav_tv_shows(gfg_ratings_merged_df.sort_values(by='primaryTitle', ascending=True))
 fav_tv_shows_df.to_csv('fav_tv_shows.csv', index=False)
-print(fav_tv_shows_df)
+print('fav_tv_shows_df:\n',fav_tv_shows_df)
 
 # creating charts via matplotlib
 import matplotlib.pyplot as plt
