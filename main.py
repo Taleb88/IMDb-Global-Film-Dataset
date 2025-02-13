@@ -126,8 +126,8 @@ gfg_ratings_merged_df = gfg_ratings_merged_df.sort_values(by='averageRating', as
 gfg_ratings_merged_df.to_csv('gfg_ratings_merged.csv', index=False)
 print('gfg_ratings_merged_df:\n',gfg_ratings_merged_df.head(50),'\n')
 
-# value corrections - miscelleaneous
-
+# VALUE CORRECTIONS - MISCELLANEOUS
+gfg_ratings_merged_df = gfg_ratings_merged_df.loc[gfg_df['']]
 
 # top 50 tv series; min of 50,000 votes
 top_50_tv_series_df = \
@@ -160,6 +160,11 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == 'The Ren & Stimpy Show') |
             (df['primaryTitle'] == '2 Stupid Dogs') |
             (df['primaryTitle'] == 'Eek! The Cat') |
+            (df['primaryTitle'] == 'SpongeBob SquarePants') |
+            (df['primaryTitle'] == 'Futurama') |
+            (df['primaryTitle'] == 'King of the Hill') |
+            (df['primaryTitle'] == 'Sister, Sister') |
+            (df['primaryTitle'] == 'Boy Meets World') |
             ((df['primaryTitle'] == 'Doug') & (df['startYear'] == 1991)) | 
             ((df['primaryTitle'] == 'The Wire') & (df['startYear'] == 2002)) |            
             ((df['primaryTitle'] == 'Rugrats') & (df['startYear'] == 1991)) |
