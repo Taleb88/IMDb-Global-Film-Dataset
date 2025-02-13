@@ -142,20 +142,22 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == 'Martin') | 
             (df['primaryTitle'] == 'Living Single') | 
             (df['primaryTitle'] == "Hangin' with Mr. Cooper") | 
-            (df['primaryTitle'] == 'Matlock') | 
             (df['primaryTitle'] == 'In the Heat of the Night') | 
             (df['primaryTitle'] == 'The Simpsons') | 
             (df['primaryTitle'] == 'Roc') | 
             (df['primaryTitle'] == 'Boy Meets World') | 
-            (df['primaryTitle'] == 'Charmed') | 
             (df['primaryTitle'] == 'My Wife and Kids') | 
-            (df['primaryTitle'] == 'In Living Color') |  
             (df['primaryTitle'] == 'Law & Order') |
+            ((df['primaryTitle'] == 'Charmed') & (df['startYear'] == 1998)) | 
+            ((df['primaryTitle'] == 'Matlock') & (df['startYear'] == 1986)) | 
+            ((df['primaryTitle'] == 'In Living Color') & (df['startYear'] == 1990)) | 
             ((df['primaryTitle'] == 'Saved by the Bell') & (df['startYear'] == 1989)))]
     except Exception as e:
         return print(f'cannot filter accordingly - {type(e)}')
 
-print(fav_tv_shows(gfg_ratings_merged_df))
+fav_tv_shows_df = fav_tv_shows(gfg_ratings_merged_df.sort_values(by='primaryTitle', ascending=True))
+fav_tv_shows_df.to_csv('fav_tv_shows.csv', index=False)
+print(fav_tv_shows_df)
 
 # creating charts via matplotlib
 import matplotlib.pyplot as plt
