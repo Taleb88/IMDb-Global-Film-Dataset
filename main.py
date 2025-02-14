@@ -196,7 +196,6 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == "That '70s Show") |
             (df['primaryTitle'] == 'Law & Order: Criminal Intent') |
             (df['primaryTitle'] == 'Nash Bridges') |
-            (df['primaryTitle'] == 'The Pretender') |
             (df['primaryTitle'] == 'The Wayans Bros.') |
             (df['primaryTitle'] == 'The Drew Carey Show') |
             (df['primaryTitle'] == 'The Jamie Foxx Show') |
