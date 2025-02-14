@@ -170,7 +170,6 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == 'King of the Hill') |
             (df['primaryTitle'] == 'My Brother and Me') |
             (df['primaryTitle'] == 'In The House') |
-            (df['primaryTitle'] == 'Amen') |
             (df['primaryTitle'] == 'Ducktales') |
             (df['primaryTitle'] == 'Jimmy Neutron: Boy Genius') |
             (df['primaryTitle'] == 'Camp Candy') |
@@ -182,6 +181,20 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == 'Desperate Housewives') |
             (df['primaryTitle'] == 'A Different World') |
             (df['primaryTitle'] == 'Banshee') |
+            (df['primaryTitle'] == 'King of Queens') |
+            (df['primaryTitle'] == 'Martial Law') |
+            (df['primaryTitle'] == 'Vanishing Son') |
+            (df['primaryTitle'] == 'Police Academy') |
+            (df['primaryTitle'] == 'Xena: Warrior Princess') |
+            (df['primaryTitle'] == 'Doogie Howser, M.D.') |
+            (df['primaryTitle'] == 'Mr. Belvedere') |
+            (df['primaryTitle'] == 'Walker, Texas Ranger') |
+            (df['primaryTitle'] == '7th Heaven') |
+            (df['primaryTitle'] == 'Buffy the Vampire Slayer') |
+            (df['primaryTitle'] == "That '70s Show") |
+            (df['primaryTitle'] == 'Law & Order: Criminal Intent') |
+            (df['primaryTitle'] == 'Nash Bridges') |
+            ((df['primaryTitle'] == 'Amen') & (df['startYear'] == 1986)) | 
             ((df['primaryTitle'] == 'Legends of the Hidden Temple') & (df['startYear'] == 1993)) | 
             ((df['primaryTitle'] == 'Doug') & (df['startYear'] == 1991)) | 
             ((df['primaryTitle'] == 'The Wire') & (df['startYear'] == 2002)) |            
