@@ -200,10 +200,11 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == 'The Wayans Bros.') |
             (df['primaryTitle'] == 'The Drew Carey Show') |
             (df['primaryTitle'] == 'The Jamie Foxx Show') |
-            (df['primaryTitle'] == 'Full House') |
             (df['primaryTitle'] == 'Tiny Toon Adventures') |
-            (df['primaryTitle'] == 'Animaniacs') |
             (df['primaryTitle'] == 'Cobra Kai') |
+            ((df['primaryTitle'] == 'The Pretender') & (df['startYear'] == 1996)) | 
+            ((df['primaryTitle'] == 'Full House') & (df['startYear'] == 1987)) | 
+            ((df['primaryTitle'] == 'Animaniacs') & (df['startYear'] == 1993)) | 
             ((df['primaryTitle'] == 'Amen') & (df['startYear'] == 1986)) | 
             ((df['primaryTitle'] == 'Legends of the Hidden Temple') & (df['startYear'] == 1993)) | 
             ((df['primaryTitle'] == 'Doug') & (df['startYear'] == 1991)) | 
