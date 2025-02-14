@@ -181,7 +181,7 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == 'Desperate Housewives') |
             (df['primaryTitle'] == 'A Different World') |
             (df['primaryTitle'] == 'Banshee') |
-            (df['primaryTitle'] == 'King of Queens') |
+            (df['primaryTitle'] == 'The King of Queens') |
             (df['primaryTitle'] == 'Martial Law') |
             (df['primaryTitle'] == 'Vanishing Son') |
             (df['primaryTitle'] == 'Police Academy') |
