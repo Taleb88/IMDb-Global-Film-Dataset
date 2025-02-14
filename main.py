@@ -131,7 +131,6 @@ gfg_ratings_merged_df.loc[gfg_df['primaryTitle'] == 'My Wife and Kids', 'startYe
 gfg_ratings_merged_df.loc[gfg_df['primaryTitle'] == 'New york Undercover', 'endYear'] = 1998
 gfg_ratings_merged_df.loc[gfg_df['primaryTitle'] == 'New york Undercover', 'endYear'] = 1993
 
-
 # top 50 tv series; min of 50,000 votes
 top_50_tv_series_df = \
     gfg_ratings_merged_df.loc[(gfg_ratings_merged_df['titleType'] == 'tvSeries') 
@@ -187,7 +186,7 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == 'The King of Queens') |
             (df['primaryTitle'] == 'Martial Law') |
             (df['primaryTitle'] == 'Vanishing Son') |
-            (df['primaryTitle'] == 'Police Academy') |
+            (df['primaryTitle'] == 'Police Academy: The Series') |
             (df['primaryTitle'] == 'Xena: Warrior Princess') |
             (df['primaryTitle'] == 'Doogie Howser, M.D.') |
             (df['primaryTitle'] == 'Mr. Belvedere') |
@@ -220,7 +219,7 @@ def fav_tv_shows(df):
 
 fav_tv_shows_df = fav_tv_shows(gfg_ratings_merged_df.sort_values(by='primaryTitle', ascending=True))
 fav_tv_shows_df.to_csv('fav_tv_shows.csv', index=False)
-print('fav_tv_shows_df:\n',fav_tv_shows_df)
+print('fav_tv_shows_df:\n',fav_tv_shows_df.head(100))
 
 # creating charts via matplotlib
 import matplotlib.pyplot as plt
