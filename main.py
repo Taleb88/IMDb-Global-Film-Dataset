@@ -127,7 +127,10 @@ gfg_ratings_merged_df.to_csv('gfg_ratings_merged.csv', index=False)
 print('gfg_ratings_merged_df:\n',gfg_ratings_merged_df.head(50),'\n')
 
 # VALUE CORRECTIONS - MISCELLANEOUS
-# gfg_ratings_merged_df = gfg_ratings_merged_df.loc[gfg_df['']]
+gfg_ratings_merged_df.loc[gfg_df['primaryTitle'] == 'My Wife and Kids', 'startYear'] = 2001
+gfg_ratings_merged_df.loc[gfg_df['primaryTitle'] == 'New york Undercover', 'endYear'] = 1998
+gfg_ratings_merged_df.loc[gfg_df['primaryTitle'] == 'New york Undercover', 'endYear'] = 1993
+
 
 # top 50 tv series; min of 50,000 votes
 top_50_tv_series_df = \
@@ -171,7 +174,7 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == 'My Brother and Me') |
             (df['primaryTitle'] == 'In The House') |
             (df['primaryTitle'] == 'Ducktales') |
-            (df['primaryTitle'] == 'Jimmy Neutron: Boy Genius') |
+            (df['primaryTitle'] == 'The Adventures of Jimmy Neutron, Boy Genius') |
             (df['primaryTitle'] == 'Camp Candy') |
             (df['primaryTitle'] == 'Mighty Morphin Power Rangers') |
             (df['primaryTitle'] == 'The Fairly OddParents') |
@@ -194,6 +197,14 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == "That '70s Show") |
             (df['primaryTitle'] == 'Law & Order: Criminal Intent') |
             (df['primaryTitle'] == 'Nash Bridges') |
+            (df['primaryTitle'] == 'The Pretender') |
+            (df['primaryTitle'] == 'The Wayans Bros.') |
+            (df['primaryTitle'] == 'The Drew Carey Show') |
+            (df['primaryTitle'] == 'The Jamie Foxx Show') |
+            (df['primaryTitle'] == 'Full House') |
+            (df['primaryTitle'] == 'Tiny Toon Adventures') |
+            (df['primaryTitle'] == 'Animaniacs') |
+            (df['primaryTitle'] == 'Cobra Kai') |
             ((df['primaryTitle'] == 'Amen') & (df['startYear'] == 1986)) | 
             ((df['primaryTitle'] == 'Legends of the Hidden Temple') & (df['startYear'] == 1993)) | 
             ((df['primaryTitle'] == 'Doug') & (df['startYear'] == 1991)) | 
