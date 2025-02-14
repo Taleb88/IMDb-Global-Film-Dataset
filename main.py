@@ -127,7 +127,7 @@ gfg_ratings_merged_df.to_csv('gfg_ratings_merged.csv', index=False)
 print('gfg_ratings_merged_df:\n',gfg_ratings_merged_df.head(50),'\n')
 
 # VALUE CORRECTIONS - MISCELLANEOUS
-gfg_ratings_merged_df = gfg_ratings_merged_df.loc[gfg_df['']]
+# gfg_ratings_merged_df = gfg_ratings_merged_df.loc[gfg_df['']]
 
 # top 50 tv series; min of 50,000 votes
 top_50_tv_series_df = \
@@ -165,6 +165,24 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == 'King of the Hill') |
             (df['primaryTitle'] == 'Sister, Sister') |
             (df['primaryTitle'] == 'Boy Meets World') |
+            (df['primaryTitle'] == 'Darkwing Duck') |
+            (df['primaryTitle'] == 'Double Dragon') |
+            (df['primaryTitle'] == 'King of the Hill') |
+            (df['primaryTitle'] == 'My Brother and Me') |
+            (df['primaryTitle'] == 'In The House') |
+            (df['primaryTitle'] == 'Amen') |
+            (df['primaryTitle'] == 'Ducktales') |
+            (df['primaryTitle'] == 'Jimmy Neutron: Boy Genius') |
+            (df['primaryTitle'] == 'Camp Candy') |
+            (df['primaryTitle'] == 'Mighty Morphin Power Rangers') |
+            (df['primaryTitle'] == 'The Fairly OddParents') |
+            (df['primaryTitle'] == 'Fargo') |
+            (df['primaryTitle'] == 'Nickelodeon Arcade') |
+            (df['primaryTitle'] == 'Yes, Dear') |
+            (df['primaryTitle'] == 'Desperate Housewives') |
+            (df['primaryTitle'] == 'A Different World') |
+            (df['primaryTitle'] == 'Banshee') |
+            ((df['primaryTitle'] == 'Legends of the Hidden Temple') & (df['startYear'] == 1993)) | 
             ((df['primaryTitle'] == 'Doug') & (df['startYear'] == 1991)) | 
             ((df['primaryTitle'] == 'The Wire') & (df['startYear'] == 2002)) |            
             ((df['primaryTitle'] == 'Rugrats') & (df['startYear'] == 1991)) |
