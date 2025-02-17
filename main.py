@@ -130,6 +130,7 @@ print('gfg_ratings_merged_df:\n',gfg_ratings_merged_df.head(50),'\n')
 gfg_ratings_merged_df.loc[gfg_df['primaryTitle'] == 'My Wife and Kids', 'startYear'] = 2001
 gfg_ratings_merged_df.loc[gfg_df['primaryTitle'] == 'New york Undercover', 'endYear'] = 1998
 gfg_ratings_merged_df.loc[gfg_df['primaryTitle'] == 'New york Undercover', 'endYear'] = 1993
+gfg_ratings_merged_df.to_csv('gfg_ratings_merged.csv', index=False)
 
 # top 50 tv series; min of 50,000 votes
 top_50_tv_series_df = \
@@ -153,7 +154,7 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == 'Boy Meets World') | 
             (df['primaryTitle'] == 'My Wife and Kids') | 
             (df['primaryTitle'] == 'Law & Order') |
-            (df['primaryTitle'] == 'The Fresh Prince of Bel Air') |
+            (df['primaryTitle'] == 'The Fresh Prince of Bel-Air') |
             (df['primaryTitle'] == 'Beverly Hills, 90210') |
             (df['primaryTitle'] == 'Married... with Children') |
             (df['primaryTitle'] == 'Malcolm & Eddie') |
@@ -171,8 +172,8 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == 'Double Dragon') |
             (df['primaryTitle'] == 'King of the Hill') |
             (df['primaryTitle'] == 'My Brother and Me') |
-            (df['primaryTitle'] == 'In The House') |
-            (df['primaryTitle'] == 'Ducktales') |
+            (df['primaryTitle'] == 'In the House') |
+            (df['primaryTitle'] == 'DuckTales') |
             (df['primaryTitle'] == 'The Adventures of Jimmy Neutron, Boy Genius') |
             (df['primaryTitle'] == 'Camp Candy') |
             (df['primaryTitle'] == 'Mighty Morphin Power Rangers') |
