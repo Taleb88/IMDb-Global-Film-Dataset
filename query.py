@@ -15,6 +15,9 @@ gfg_video_df = pd.read_csv('gfg_video.csv')
 gfg_videogame_df = pd.read_csv('gfg_videogame.csv')
 
 # gfg_movie_df
-gfg_movie_df = gfg_movie_df.loc[gfg_movie_df['primaryTitle'].str.contains('Hearts', na=False)]
+while True:
+    answer = input('\ntype answer:\n')
+    print(f"{gfg_movie_df.loc[(gfg_movie_df['primaryTitle'].str.contains(answer, na=False))]}")
 
-print(gfg_movie_df)
+    if answer == 'exit query':
+        break
