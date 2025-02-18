@@ -1,5 +1,4 @@
 import pandas as pd
-import re
 
 gfg_df = pd.read_csv('csv/GfG.csv', low_memory=False)
 
