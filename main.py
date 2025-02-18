@@ -126,7 +126,7 @@ gfg_ratings_merged_df = gfg_ratings_merged_df.sort_values(by='averageRating', as
 gfg_ratings_merged_df.to_csv('gfg_ratings_merged.csv', index=False)
 print('gfg_ratings_merged_df:\n',gfg_ratings_merged_df.head(50),'\n')
 
-# VALUE CORRECTIONS - MISCELLANEOUS
+# VALUE CORRECTIONS - MISCELLANEOUS - IN PROGRESS
 gfg_ratings_merged_df.loc[gfg_df['primaryTitle'] == 'My Wife and Kids', 'startYear'] = 2001
 gfg_ratings_merged_df.loc[gfg_df['primaryTitle'] == 'New york Undercover', 'endYear'] = 1998
 gfg_ratings_merged_df.loc[gfg_df['primaryTitle'] == 'New york Undercover', 'endYear'] = 1993
