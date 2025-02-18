@@ -14,10 +14,19 @@ gfg_tv_special_df = pd.read_csv('gfg_tv_special.csv')
 gfg_video_df = pd.read_csv('gfg_video.csv')
 gfg_videogame_df = pd.read_csv('gfg_videogame.csv')
 
+array = ['gfg_ratings_merged_df']
+
 # gfg_movie_df
 while True:
-    answer = input('\ntype answer:\n')
-    print(f"{gfg_movie_df.loc[(gfg_movie_df['primaryTitle'].str.contains(answer, na=False))]}")
+    df_answer = input('\ntype in name of dataframe:\n')
+    # print(f"{gfg_movie_df.loc[(gfg_movie_df['primaryTitle'].str.contains(answer, na=False))]}")
+    
+    for x in array:
+        if df_answer == f'{x}':
+            primary_title_answer = input('\nenter primaryTitle value\n:')
+            print(f"{gfg_movie_df.loc[(gfg_movie_df['primaryTitle'].str.contains(primary_title_answer, na=False))]}")
+            
+            
 
-    if answer == 'exit query':
+    if df_answer == 'exit query':
         break
