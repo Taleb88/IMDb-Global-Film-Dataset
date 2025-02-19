@@ -6,11 +6,9 @@ while True:
     df_answer = input('\ntype in name of dataframe:\n')
 
     for df_name in dataframes:
+        if df_answer == 'exit query':
+            break
         if df_answer in df_name:
             df = pd.read_csv(f'{df_name}.csv')
             primary_title_answer = input('primary title:\n')
-            print(f"{df[(df['primaryTitle'].str.contains(primary_title_answer, na=False))]}") 
-
-    if df_answer == 'exit query':
-        break
-                     
+            print(f"{df[(df['primaryTitle'].str.contains(primary_title_answer, na=False))]}")
