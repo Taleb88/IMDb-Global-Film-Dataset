@@ -128,7 +128,7 @@ print('gfg_ratings_merged_df:\n',gfg_ratings_merged_df.head(50),'\n')
 # VALUE CORRECTIONS - MISCELLANEOUS - IN PROGRESS
 gfg_ratings_merged_df.loc[gfg_ratings_merged_df['primaryTitle'] == 'My Wife and Kids', 'startYear'] = 2001
 gfg_ratings_merged_df.loc[gfg_ratings_merged_df['primaryTitle'] == 'New york Undercover', 'endYear'] = 1998
-gfg_ratings_merged_df.loc[gfg_ratings_merged_df['primaryTitle'] == 'New york Undercover', 'endYear'] = 1993
+gfg_ratings_merged_df.loc[gfg_ratings_merged_df['primaryTitle'] == 'Saved by the Bell', 'endYear'] = 1993
 gfg_ratings_merged_df.to_csv('gfg_ratings_merged.csv', index=False)
 
 # top 50 tv series; min of 50,000 votes
