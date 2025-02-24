@@ -224,6 +224,21 @@ print('fav_tv_shows_df:\n',fav_tv_shows_df.to_string())
 # creating charts via matplotlib
 import matplotlib.pyplot as plt
 
+for year in fav_tv_shows_df['startYear'].values:
+    try:
+        fav_tv_shows_df = pd.read_csv('fav_tv_shows.csv')
+        color = 'green'
+        x = fav_tv_shows_df['primaryTitle']
+        y = fav_tv_shows_df.loc['startYear' == year]
+        plt.barh(x, y, color=color)
+        plt.title(f'Favorit ')
+        plt.yticks(fontsize=8)
+        plt.xlabel('Players')
+        plt.ylabel('RBIs')
+        plt.show()   
+    except Exception as e:
+        print(f'cannot create charts due to wrong year(s) - e - {type(e)}')
+
 color = 'blue'
 x = top_50_tv_series_df['primaryTitle'].astype(str)
 y = top_50_tv_series_df['averageRating']
