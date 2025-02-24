@@ -125,7 +125,7 @@ gfg_ratings_merged_df = gfg_ratings_merged_df.sort_values(by='averageRating', as
 gfg_ratings_merged_df.to_csv('gfg_ratings_merged.csv', index=False)
 print('gfg_ratings_merged_df:\n',gfg_ratings_merged_df.head(50),'\n')
 
-# VALUE CORRECTIONS - MISCELLANEOUS - IN PROGRESS
+# VALUE CORRECTIONS - MISCELLANEOUS
 gfg_ratings_merged_df.loc[gfg_ratings_merged_df['primaryTitle'] == 'My Wife and Kids', 'startYear'] = 2001
 gfg_ratings_merged_df.loc[gfg_ratings_merged_df['primaryTitle'] == 'New york Undercover', 'endYear'] = 1998
 gfg_ratings_merged_df.loc[gfg_ratings_merged_df['primaryTitle'] == 'Saved by the Bell', 'endYear'] = 1993
@@ -224,21 +224,6 @@ print('fav_tv_shows_df:\n',fav_tv_shows_df.to_string())
 # creating charts via matplotlib
 import matplotlib.pyplot as plt
 
-for year in fav_tv_shows_df['startYear'].values:
-    try:
-        fav_tv_shows_df = pd.read_csv('fav_tv_shows.csv')
-        color = 'green'
-        x = fav_tv_shows_df['primaryTitle']
-        y = fav_tv_shows_df.loc['startYear' == year]
-        plt.barh(x, y, color=color)
-        plt.title(f'Favorit ')
-        plt.yticks(fontsize=8)
-        plt.xlabel('Players')
-        plt.ylabel('RBIs')
-        plt.show()   
-    except Exception as e:
-        print(f'cannot create charts due to wrong year(s) - e - {type(e)}')
-
 color = 'blue'
 x = top_50_tv_series_df['primaryTitle'].astype(str)
 y = top_50_tv_series_df['averageRating']
@@ -247,6 +232,17 @@ plt.title('Top 50 TV Series')
 plt.yticks(fontsize=8)
 plt.xlabel('Rating')
 plt.show()
+
+fav_tv_shows_df = pd.read_csv('fav_tv_shows.csv')
+color = 'blue'
+x = fav_tv_shows_df['primaryTitle']
+y = fav_tv_shows_df['runtimeMinutes']
+plt.barh(x, y, color=color)
+plt.title("Taleb's Favorite TV Shows - Runtime Minutes")
+plt.yticks(fontsize=8)
+plt.xlabel('Primary Title')
+plt.ylabel('Runtime Minutes')
+plt.show() 
 
 import time
 

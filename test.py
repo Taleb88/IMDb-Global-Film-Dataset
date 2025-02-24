@@ -1,25 +1,23 @@
 import pandas as pd
 
 
-# 2/23/2025 - TESTING IN PROGRESS
+
+
+
+# 2/23/2025 - TESTING IN PROGRESS - COMPLETE - TO BE USED
 # creating charts via matplotlib
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
-fav_tv_shows_df = pd.read_csv('fav_tv_shows.csv')
-
-for year in fav_tv_shows_df['startYear'].values:
-    try:
-        color = 'red'
-        x = fav_tv_shows_df['primaryTitle']
-        y = fav_tv_shows_df.loc[fav_tv_shows_df['startYear'] == year]
-        plt.barh(x, y, color=color)
-        plt.title(f'Favorit ')
-        plt.yticks(fontsize=8)
-        plt.xlabel('primaryTitle')
-        plt.ylabel('startYear')
-        plt.show()   
-    except Exception as e:
-        print(f'cannot create charts due to wrong year(s) - e - {type(e)}')
+# fav_tv_shows_df = pd.read_csv('fav_tv_shows.csv')
+# color = 'red'
+# x = fav_tv_shows_df['primaryTitle']
+# y = fav_tv_shows_df['runtimeMinutes']
+# plt.barh(x, y, color=color)
+# plt.title("Taleb's Favorite TV Shows - Runtime Minutes")
+# plt.yticks(fontsize=8)
+# plt.xlabel('Primary Title')
+# plt.ylabel('Runtime Minutes')
+# plt.show()   
 
 # ratings_df = pd.read_table('title.ratings.tsv')
 # title_basics_df = pd.read_table('title.basics.tsv')
