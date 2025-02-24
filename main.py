@@ -223,7 +223,7 @@ print('fav_tv_shows_df:\n',fav_tv_shows_df.to_string())
 
 # creating charts via matplotlib
 import matplotlib.pyplot as plt
-
+# top 50 tv series
 color = 'blue'
 x = top_50_tv_series_df['primaryTitle'].astype(str)
 y = top_50_tv_series_df['averageRating']
@@ -232,9 +232,7 @@ plt.title('Top 50 TV Series')
 plt.yticks(fontsize=8)
 plt.xlabel('Rating')
 plt.show()
-
-fav_tv_shows_df = pd.read_csv('fav_tv_shows.csv')
-color = 'blue'
+# fav tv shows
 x = fav_tv_shows_df['primaryTitle']
 y = fav_tv_shows_df['runtimeMinutes']
 plt.barh(x, y, color=color)

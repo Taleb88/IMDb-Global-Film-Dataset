@@ -10,6 +10,9 @@ while True:
         if df_answer == 'exit query':
             break
 
+        if df_answer not in dataframes:
+            print('dataframe not found. please try again.')
+
         for df_name in dataframes:
             if df_answer == 'exit query':
                 break
@@ -29,6 +32,9 @@ while True:
         
         if df_answer == 'exit query':
             break
+
+        if df_answer not in dataframes:
+            print('dataframe not found. please try again.')
         
         for df_name in dataframes:
             if df_answer == 'exit query':
