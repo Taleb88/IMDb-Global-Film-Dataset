@@ -200,7 +200,7 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == 'The Jamie Foxx Show') |
             (df['primaryTitle'] == 'Tiny Toon Adventures') |
             (df['primaryTitle'] == 'Cobra Kai') |
-            ((df['primaryTitle'] == 'Ducktales') & (df['startYear'] == 1987)) |             
+            ((df['primaryTitle'] == 'DuckTales') & (df['startYear'] == 1987)) |             
             ((df['primaryTitle'] == 'The Pretender') & (df['startYear'] == 1996)) | 
             ((df['primaryTitle'] == 'Full House') & (df['startYear'] == 1987)) | 
             ((df['primaryTitle'] == 'Animaniacs') & (df['startYear'] == 1993)) | 
@@ -231,6 +231,7 @@ plt.barh(x, y, color=color)
 plt.title('Top 50 TV Series')
 plt.yticks(fontsize=8)
 plt.xlabel('Rating')
+plt.gca().invert_yaxis()
 plt.show()
 # fav tv shows
 x = fav_tv_shows_df['primaryTitle']
@@ -240,6 +241,7 @@ plt.title("Taleb's Favorite TV Shows - Runtime Minutes")
 plt.yticks(fontsize=8)
 plt.xlabel('Primary Title')
 plt.ylabel('Runtime Minutes')
+plt.gca().invert_yaxis()
 plt.show() 
 
 import time
