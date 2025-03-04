@@ -172,7 +172,6 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == 'King of the Hill') |
             (df['primaryTitle'] == 'My Brother and Me') |
             (df['primaryTitle'] == 'In the House') |
-            (df['primaryTitle'] == 'DuckTales') |
             (df['primaryTitle'] == 'The Adventures of Jimmy Neutron, Boy Genius') |
             (df['primaryTitle'] == 'Camp Candy') |
             (df['primaryTitle'] == 'Mighty Morphin Power Rangers') |
@@ -201,6 +200,7 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == 'The Jamie Foxx Show') |
             (df['primaryTitle'] == 'Tiny Toon Adventures') |
             (df['primaryTitle'] == 'Cobra Kai') |
+            ((df['primaryTitle'] == 'Ducktales') & (df['startYear'] == 1987)) |             
             ((df['primaryTitle'] == 'The Pretender') & (df['startYear'] == 1996)) | 
             ((df['primaryTitle'] == 'Full House') & (df['startYear'] == 1987)) | 
             ((df['primaryTitle'] == 'Animaniacs') & (df['startYear'] == 1993)) | 
