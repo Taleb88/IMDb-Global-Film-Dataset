@@ -143,7 +143,7 @@ print('top_50_tv_series:\n',top_50_tv_series_df,'\n')
 def fav_tv_shows(df):
     try:
         return df[(df['titleType'] == 'tvSeries') &
-            ((df['primaryTitle'] == 'New York Undercover') | 
+            ((df['primaryTitle'] == 'New York Undercover') |
             (df['primaryTitle'] == 'Martin') | 
             (df['primaryTitle'] == 'Living Single') | 
             (df['primaryTitle'] == "Hangin' with Mr. Cooper") | 
@@ -200,7 +200,13 @@ def fav_tv_shows(df):
             (df['primaryTitle'] == 'The Jamie Foxx Show') |
             (df['primaryTitle'] == 'Tiny Toon Adventures') |
             (df['primaryTitle'] == 'Cobra Kai') |
-            ((df['primaryTitle'] == 'DuckTales') & (df['startYear'] == 1987)) |             
+            (df['primaryTitle'] == 'Coach') |
+            (df['primaryTitle'] == 'The New Adventures of Winnie the Pooh') |
+            (df['primaryTitle'] == 'Recess') |
+            (df['primaryTitle'] == 'Rocket Power') |
+            (df['primaryTitle'] == 'CatDog') |
+            ((df['primaryTitle'] == 'DuckTales') & (df['startYear'] == 1987)) |
+            ((df['primaryTitle'] == 'Muppet Babies') & (df['startYear'] == 1984)) |                
             ((df['primaryTitle'] == 'The Pretender') & (df['startYear'] == 1996)) | 
             ((df['primaryTitle'] == 'Full House') & (df['startYear'] == 1987)) | 
             ((df['primaryTitle'] == 'Animaniacs') & (df['startYear'] == 1993)) | 
@@ -234,12 +240,11 @@ plt.xlabel('Rating')
 plt.gca().invert_yaxis()
 plt.show()
 # fav tv shows
-x = fav_tv_shows_df['primaryTitle']
+x = fav_tv_shows_df['primaryTitle'].astype(str)
 y = fav_tv_shows_df['runtimeMinutes']
 plt.barh(x, y, color=color)
 plt.title("Taleb's Favorite TV Shows - Runtime Minutes")
 plt.yticks(fontsize=8)
-plt.xlabel('Primary Title')
 plt.ylabel('Runtime Minutes')
 plt.gca().invert_yaxis()
 plt.show() 
